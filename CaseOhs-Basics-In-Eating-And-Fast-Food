@@ -1,0 +1,84 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "CaseOhs-Basics-In-Eating-And-Fast-Food",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "never give your up",
+   LoadingSubtitle = "by TRoll",
+   Theme = "Default", 
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "WHY-YOUR-WANNA-SEE-HERE??"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "solara", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "CaseOhs-Basics | Key",
+      Subtitle = "Link in pastebin",
+      Note = "Pastebin from misc", -- Use this to tell the user how to get a key
+      FileName = "SUS😳", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/39Jycwtp"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("👁ESP", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Item ESP no work")
+
+local Button = MainTab:CreateButton({
+   Name = "💰Money",
+   Callback = function()
+        -- loadstring
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.GameFolder.Map.Interactables.Pickups.Money, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "Dollar", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "Money", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 255, 0), -- Color
+    IsEnabled = "whaeer" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.whaeer = true
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "🗳Item",
+   Callback = function()
+        -- loadstring
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+-- config
+ESP.Players = false
+ESP.Boxes = false
+ESP.Names = true
+ESP:Toggle(true)
+
+-- object
+ESP:AddObjectListener(Workspace.GameFolder.Map.Interactables.Pickups.Items, { -- Object Path, For example: Workspace.ThisFolder
+    Name = "Item", --Object name inside of the path, for example: Workspace.ThisFolder.Item_1
+    CustomName = "Item", -- Name you want to be displayed
+    Color = Color3.fromRGB(0, 255, 0), -- Color
+    IsEnabled = "wuew" -- Any name, has to be the same as the last line: ESP.TheNameYouWant
+})
+ESP.wuew = true
+   end,
+})
